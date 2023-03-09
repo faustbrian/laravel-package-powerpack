@@ -11,7 +11,7 @@ trait HasProxyFunctions
         $this->commands($commands);
     }
 
-    public function forwardPublishes(array $paths, $groups = null)
+    public function forwardPublishes(array $paths, array|string $groups = null): void
     {
         $this->publishes($paths, $groups);
     }
@@ -21,9 +21,9 @@ trait HasProxyFunctions
         $this->loadMigrationsFrom($path);
     }
 
-    public function forwardLoadTranslationsFrom(string $path): void
+    public function forwardLoadTranslationsFrom(string $path, string $namespace): void
     {
-        $this->loadTranslationsFrom($path);
+        $this->loadTranslationsFrom($path, $namespace);
     }
 
     public function forwardLoadJsonTranslationsFrom(string $path): void

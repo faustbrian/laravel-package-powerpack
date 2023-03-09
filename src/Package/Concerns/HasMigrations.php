@@ -24,7 +24,7 @@ trait HasMigrations
         return $this;
     }
 
-    public function hasMigrations(...$migrationFileNames): self
+    public function hasMigrations(array $migrationFileNames): self
     {
         $this->migrationFileNames = array_merge(
             $this->migrationFileNames,

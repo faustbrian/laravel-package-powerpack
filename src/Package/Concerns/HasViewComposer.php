@@ -8,7 +8,7 @@ trait HasViewComposer
 {
     public array $viewComposers = [];
 
-    public function hasViewComposer($view, $viewComposer): self
+    public function hasViewComposer(array|string $view, object $viewComposer): self
     {
         if (! is_array($view)) {
             $view = [$view];

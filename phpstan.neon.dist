@@ -2,9 +2,9 @@ includes:
     - phpstan-baseline.neon
 
 parameters:
-    level: 4
+    level: 6
     paths:
-        - src
+        - src/Package
     tmpDir: build/phpstan
     checkOctaneCompatibility: true
     checkModelProperties: true

@@ -38,7 +38,7 @@ final class InstallCommand extends Command
         parent::__construct();
     }
 
-    public function handle()
+    public function handle(): void
     {
         if ($this->startWith) {
             ($this->startWith)($this);
@@ -109,14 +109,14 @@ final class InstallCommand extends Command
         return $this;
     }
 
-    public function startWith($callable): self
+    public function startWith(callable $callable): self
     {
         $this->startWith = $callable;
 
         return $this;
     }
 
-    public function endWith($callable): self
+    public function endWith(callable $callable): self
     {
         $this->endWith = $callable;
 

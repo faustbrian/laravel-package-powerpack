@@ -15,7 +15,7 @@ trait HasViewComponents
         return $this;
     }
 
-    public function hasViewComponents(string $prefix, ...$viewComponentNames): self
+    public function hasViewComponents(string $prefix, array $viewComponentNames): self
     {
         foreach ($viewComponentNames as $componentName) {
             $this->viewComponents[$componentName] = $prefix;

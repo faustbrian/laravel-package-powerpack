@@ -14,17 +14,8 @@ final class ViewPublisherExtension implements Extension
     {
         if ($package->hasViews) {
             $serviceProvider->forwardPublishes([
-                $package->basePath('/../resources/views') => base_path("resources/views/vendor/{$this->packageView($package)}"),
-            ], "{$this->packageView($package)}-views");
+                $package->basePath('/../resources/views') => base_path("resources/views/vendor/{$package->viewNamespace()}"),
+            ], "{$package->viewNamespace()}-views");
         }
-    }
-
-    private function packageView(Package $package)
-    {
-        if (is_null($package->viewNamespace())) {
-            return $package->shortName();
-        }
-
-        return $package->viewNamespace;
     }
 }

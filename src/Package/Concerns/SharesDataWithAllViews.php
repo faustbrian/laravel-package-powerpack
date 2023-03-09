@@ -8,7 +8,7 @@ trait SharesDataWithAllViews
 {
     public array $sharedViewData = [];
 
-    public function sharesDataWithAllViews(string $name, $value): self
+    public function sharesDataWithAllViews(string $name, mixed $value): self
     {
         $this->sharedViewData[$name] = $value;
 

@@ -15,7 +15,7 @@ trait HasCommands
         return $this;
     }
 
-    public function hasCommands(...$commandClassNames): self
+    public function hasCommands(array $commandClassNames): self
     {
         $this->commands = array_merge($this->commands, collect($commandClassNames)->flatten()->toArray());
 
