@@ -10,21 +10,21 @@ trait HasMigrations
 
     public array $migrationFileNames = [];
 
-    public function runsMigrations(bool $runsMigrations = true): self
+    public function runsMigrations(bool $runsMigrations = true): static
     {
         $this->runsMigrations = $runsMigrations;
 
         return $this;
     }
 
-    public function hasMigration(string $migrationFileName): self
+    public function hasMigration(string $migrationFileName): static
     {
         $this->migrationFileNames[] = $migrationFileName;
 
         return $this;
     }
 
-    public function hasMigrations(array $migrationFileNames): self
+    public function hasMigrations(array $migrationFileNames): static
     {
         $this->migrationFileNames = array_merge(
             $this->migrationFileNames,

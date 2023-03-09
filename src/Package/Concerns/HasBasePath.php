@@ -17,7 +17,7 @@ trait HasBasePath
         return $this->basePath.DIRECTORY_SEPARATOR.ltrim($directory, DIRECTORY_SEPARATOR);
     }
 
-    public function setBasePath(string $path): self
+    public function setBasePath(string $path): static
     {
         $this->basePath = $path;
 

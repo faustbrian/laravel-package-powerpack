@@ -81,49 +81,49 @@ final class InstallCommand extends Command
         }
     }
 
-    public function publishConfigFile(): self
+    public function publishConfigFile(): static
     {
         $this->shouldPublishConfigFile = true;
 
         return $this;
     }
 
-    public function publishMigrations(): self
+    public function publishMigrations(): static
     {
         $this->shouldPublishMigrations = true;
 
         return $this;
     }
 
-    public function askToRunMigrations(): self
+    public function askToRunMigrations(): static
     {
         $this->askToRunMigrations = true;
 
         return $this;
     }
 
-    public function copyAndRegisterServiceProviderInApp(): self
+    public function copyAndRegisterServiceProviderInApp(): static
     {
         $this->copyServiceProviderInApp = true;
 
         return $this;
     }
 
-    public function startWith(callable $callable): self
+    public function startWith(callable $callable): static
     {
         $this->startWith = $callable;
 
         return $this;
     }
 
-    public function endWith(callable $callable): self
+    public function endWith(callable $callable): static
     {
         $this->endWith = $callable;
 
         return $this;
     }
 
-    protected function copyServiceProviderInApp(): self
+    protected function copyServiceProviderInApp(): static
     {
         $providerName = $this->package->publishableProviderName;
 

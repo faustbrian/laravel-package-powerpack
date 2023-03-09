@@ -8,14 +8,14 @@ trait HasRoutes
 {
     public array $routeFileNames = [];
 
-    public function hasRoute(string $routeFileName): self
+    public function hasRoute(string $routeFileName): static
     {
         $this->routeFileNames[] = $routeFileName;
 
         return $this;
     }
 
-    public function hasRoutes(array $routeFileNames): self
+    public function hasRoutes(array $routeFileNames): static
     {
         $this->routeFileNames = array_merge($this->routeFileNames, collect($routeFileNames)->flatten()->toArray());
 

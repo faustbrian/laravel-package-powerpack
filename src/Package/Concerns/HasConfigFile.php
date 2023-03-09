@@ -10,7 +10,7 @@ trait HasConfigFile
 
     public array $configFileNames = [];
 
-    public function hasConfigFile(array|string $configFileName = null): self
+    public function hasConfigFile(array|string $configFileName = null): static
     {
         $configFileName = $configFileName ?? $this->shortName();
 

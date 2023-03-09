@@ -10,7 +10,7 @@ trait HasInstallCommand
 {
     public array $commands = [];
 
-    public function hasInstallCommand(callable $callable): self
+    public function hasInstallCommand(callable $callable): static
     {
         $installCommand = new InstallCommand($this);
 

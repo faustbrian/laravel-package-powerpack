@@ -8,7 +8,7 @@ trait PublishesServiceProvider
 {
     public ?string $publishableProviderName = null;
 
-    public function publishesServiceProvider(string $providerName): self
+    public function publishesServiceProvider(string $providerName): static
     {
         $this->publishableProviderName = $providerName;
 

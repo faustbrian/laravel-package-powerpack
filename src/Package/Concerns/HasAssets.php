@@ -8,7 +8,7 @@ trait HasAssets
 {
     public bool $hasAssets = false;
 
-    public function hasAssets(): self
+    public function hasAssets(): static
     {
         $this->hasAssets = true;
 
