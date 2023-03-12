@@ -4,19 +4,22 @@ declare(strict_types=1);
 
 namespace PreemStudio\Jetpack\Package\Concerns;
 
-use Composer\InstalledVersions;
+use PreemStudio\Jetpack\Package\Package;
 
 trait HasComposerJson
 {
-    protected function getPackageName(): string
+    protected function getPackageManifest(Package $package): array
     {
-        return explode('/', InstalledVersions::getRootPackage()['name'])[1];
+        return json_decode(file_get_contents($package->basePath('../composer.json')), true);
     }
 
-    protected function getPackageNamespace(): string
+    protected function getPackageName(Package $package): string
     {
-        $directory = InstalledVersions::getRootPackage()['install_path'];
+        return explode('/', $this->getPackageManifest($package)['name'])[1];
+    }
 
-        return array_key_first(json_decode(file_get_contents("$directory/composer.json"), true)['autoload']['psr-4']);
+    protected function getPackageNamespace(Package $package): string
+    {
+        return array_key_first($this->getPackageManifest($package)['autoload']['psr-4']);
     }
 }

@@ -1,0 +1,8 @@
+{
+    "name": "preemstudio/laravel-jetpack",
+    "autoload": {
+        "psr-4": {
+            "PreemStudio\\Jetpack\\": "src"
+        }
+    }
+}

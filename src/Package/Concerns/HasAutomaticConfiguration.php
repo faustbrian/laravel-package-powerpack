@@ -13,7 +13,7 @@ trait HasAutomaticConfiguration
 {
     public function configurePackage(Package $package): void
     {
-        $package->name($this->getPackageName());
+        $package->name($this->getPackageName($package));
 
         if ($this->hasConfigFile($package)) {
             $package->hasConfigFile();
@@ -103,7 +103,7 @@ trait HasAutomaticConfiguration
 
     protected function getCommands(Package $package): array
     {
-        $namespace = $this->getPackageNamespace();
+        $namespace = $this->getPackageNamespace($package);
 
         return collect($this->getFilesFromDirectory($package, 'src/Commands'))
             ->map(fn (string $className) => $namespace.$className)
