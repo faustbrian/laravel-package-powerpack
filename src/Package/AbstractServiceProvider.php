@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace PreemStudio\Jetpack\Package;
 
 use Illuminate\Support\ServiceProvider;
+use PreemStudio\Jetpack\Package\Concerns\HasAutomaticConfiguration;
+use PreemStudio\Jetpack\Package\Concerns\HasComposerJson;
 use PreemStudio\Jetpack\Package\Concerns\HasConsoleExtensions;
 use PreemStudio\Jetpack\Package\Concerns\HasHooks;
 use PreemStudio\Jetpack\Package\Concerns\HasProxyFunctions;
@@ -14,14 +16,14 @@ use RuntimeException;
 
 abstract class AbstractServiceProvider extends ServiceProvider
 {
+    use HasAutomaticConfiguration;
+    use HasComposerJson;
     use HasConsoleExtensions;
     use HasHooks;
     use HasProxyFunctions;
     use HasRuntimeExtensions;
 
     protected Package $package;
-
-    abstract public function configurePackage(Package $package): void;
 
     public function register(): void
     {
