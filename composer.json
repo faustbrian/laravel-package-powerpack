@@ -18,12 +18,14 @@
     "require": {
         "php": "^8.1",
         "dms/phpunit-arraysubset-asserts": "^0.4.0",
+        "illuminate/contracts": "^10.0",
+        "nesbot/carbon": "^2.66"
+    },
+    "require-dev": {
         "ergebnis/composer-normalize": "^2.30",
         "graham-campbell/analyzer": "^4.0",
-        "illuminate/contracts": "^10.0",
         "laravel/pint": "^1.6",
         "mockery/mockery": "^1.5",
-        "nesbot/carbon": "^2.66",
         "nunomaduro/collision": "^6.4",
         "nunomaduro/larastan": "^2.5",
         "orchestra/testbench": "^8.0",
