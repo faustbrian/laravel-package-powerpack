@@ -18,7 +18,7 @@ final class MigrationPublisherExtension implements Extension
     {
         $now = Carbon::now();
         foreach ($package->migrationFileNames as $migrationFileName) {
-            $filePath = $this->getMigrationFilePath($package, "/../database/migrations/{$migrationFileName}.php");
+            $filePath = $this->getMigrationFilePath($package, $migrationFileName);
 
             $serviceProvider->forwardPublishes([
                 $filePath => $this->generateMigrationName(

@@ -13,7 +13,7 @@ final class ViewLoaderExtension implements Extension
     public function execute(AbstractServiceProvider $serviceProvider, Package $package): void
     {
         if ($package->hasViews) {
-            $serviceProvider->forwardLoadViewsFrom($package->basePath('/../resources/views'), $package->viewNamespace());
+            $serviceProvider->forwardLoadViewsFrom($package->rootPath('resources/views'), $package->viewNamespace());
         }
     }
 }

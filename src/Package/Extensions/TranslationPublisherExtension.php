@@ -16,7 +16,7 @@ final class TranslationPublisherExtension implements Extension
     {
         if ($package->hasTranslations) {
             $serviceProvider->forwardPublishes([
-                $package->basePath('/../resources/lang') => $this->getTranslationPath($package),
+                $package->rootPath('resources/lang') => $this->getTranslationPath($package),
             ], "{$package->shortName()}-translations");
         }
     }

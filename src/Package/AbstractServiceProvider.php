@@ -49,7 +49,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
         }
 
         foreach ($this->package->configFileNames as $configFileName) {
-            $this->mergeConfigFrom($this->package->basePath("/../config/{$configFileName}.php"), $configFileName);
+            $this->mergeConfigFrom($this->package->rootPath("config/{$configFileName}.php"), $configFileName);
         }
 
         $this->packageRegistered();

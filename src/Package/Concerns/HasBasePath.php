@@ -8,6 +8,11 @@ trait HasBasePath
 {
     public string $basePath;
 
+    public function rootPath(string $directory = null): string
+    {
+        return $this->basePath("/../{$directory}");
+    }
+
     public function basePath(string $directory = null): string
     {
         if ($directory === null) {

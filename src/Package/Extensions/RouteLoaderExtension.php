@@ -13,7 +13,7 @@ final class RouteLoaderExtension implements Extension
     public function execute(AbstractServiceProvider $serviceProvider, Package $package): void
     {
         foreach ($package->routeFileNames as $routeFileName) {
-            $serviceProvider->forwardLoadRoutesFrom("{$package->basePath('/../routes/')}{$routeFileName}.php");
+            $serviceProvider->forwardLoadRoutesFrom("{$package->rootPath('routes/')}{$routeFileName}.php");
         }
     }
 }

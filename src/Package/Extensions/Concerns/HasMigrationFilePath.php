@@ -10,7 +10,7 @@ trait HasMigrationFilePath
 {
     protected function getMigrationFilePath(Package $package, string $migrationFileName): string
     {
-        $filePath = $package->basePath("/../database/migrations/{$migrationFileName}.php");
+        $filePath = $package->rootPath("database/migrations/{$migrationFileName}.php");
 
         if (! file_exists($filePath)) {
             $filePath .= '.stub';

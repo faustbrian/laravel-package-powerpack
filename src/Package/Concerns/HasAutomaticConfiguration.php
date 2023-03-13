@@ -112,7 +112,7 @@ trait HasAutomaticConfiguration
 
     protected function hasFilesInDirectory(Package $package, string $directory): bool
     {
-        $directory = $package->basePath("/../$directory");
+        $directory = $package->rootPath($directory);
 
         if (File::missing($directory)) {
             return false;
@@ -123,7 +123,7 @@ trait HasAutomaticConfiguration
 
     protected function getFilesFromDirectory(Package $package, string $directory): array
     {
-        $directory = $package->basePath("/../$directory");
+        $directory = $package->rootPath($directory);
 
         if (File::missing($directory)) {
             return [];

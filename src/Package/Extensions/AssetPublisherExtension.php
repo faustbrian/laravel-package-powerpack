@@ -14,7 +14,7 @@ final class AssetPublisherExtension implements Extension
     {
         if ($package->hasAssets) {
             $serviceProvider->forwardPublishes([
-                $package->basePath('/../resources/dist') => public_path("vendor/{$package->shortName()}"),
+                $package->rootPath('resources/dist') => public_path("vendor/{$package->shortName()}"),
             ], "{$package->shortName()}-assets");
         }
     }

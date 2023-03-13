@@ -15,11 +15,11 @@ final class TranslationLoaderExtension implements Extension
     public function execute(AbstractServiceProvider $serviceProvider, Package $package): void
     {
         $serviceProvider->forwardLoadTranslationsFrom(
-            $package->basePath('/../resources/lang/'),
+            $package->rootPath('resources/lang/'),
             $package->shortName()
         );
 
-        $serviceProvider->forwardLoadJsonTranslationsFrom($package->basePath('/../resources/lang/'));
+        $serviceProvider->forwardLoadJsonTranslationsFrom($package->rootPath('resources/lang/'));
 
         $serviceProvider->forwardLoadJsonTranslationsFrom($this->getTranslationPath($package));
     }

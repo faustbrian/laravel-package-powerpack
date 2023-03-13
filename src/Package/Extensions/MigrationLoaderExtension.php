@@ -16,7 +16,7 @@ final class MigrationLoaderExtension implements Extension
     {
         foreach ($package->migrationFileNames as $migrationFileName) {
             if ($package->runsMigrations) {
-                $serviceProvider->forwardLoadMigrationsFrom($this->getMigrationFilePath($package, "/../database/migrations/{$migrationFileName}.php"));
+                $serviceProvider->forwardLoadMigrationsFrom($this->getMigrationFilePath($package, $migrationFileName));
             }
         }
     }

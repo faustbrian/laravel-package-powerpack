@@ -14,7 +14,7 @@ final class ConfigPublisherExtension implements Extension
     {
         foreach ($package->configFileNames as $configFileName) {
             $serviceProvider->forwardPublishes([
-                $package->basePath("/../config/{$configFileName}.php") => config_path("{$configFileName}.php"),
+                $package->rootPath("config/{$configFileName}.php") => config_path("{$configFileName}.php"),
             ], "{$package->shortName()}-config");
         }
     }

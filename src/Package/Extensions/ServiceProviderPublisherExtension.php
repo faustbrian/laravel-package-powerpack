@@ -14,7 +14,7 @@ final class ServiceProviderPublisherExtension implements Extension
     {
         if ($package->publishableProviderName) {
             $serviceProvider->forwardPublishes([
-                $package->basePath("/../resources/stubs/{$package->publishableProviderName}.php.stub") => base_path("app/Providers/{$package->publishableProviderName}.php"),
+                $package->rootPath("resources/stubs/{$package->publishableProviderName}.php.stub") => base_path("app/Providers/{$package->publishableProviderName}.php"),
             ], "{$package->shortName()}-provider");
         }
     }
