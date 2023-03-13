@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.2.6] - 2023-03-13
+### Added
+- automatically pick candidates for existence analysis
+
+
 ## [1.2.5] - 2023-03-13
 ### Added
 - implement `Package::rootPath` for convenience
@@ -63,7 +68,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-03-09
 
-[Unreleased]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.5...HEAD
+[Unreleased]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.6...HEAD
+[1.2.6]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.5...1.2.6
 [1.2.5]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.4...1.2.5
 [1.2.4]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.3...1.2.4
 [1.2.3]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.2...1.2.3
