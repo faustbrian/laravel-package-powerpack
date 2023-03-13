@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PreemStudio\Jetpack\TestBench;
 
 use GrahamCampbell\Analyzer\AnalysisTrait;
-use Illuminate\Support\Facades\File;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
@@ -20,7 +19,7 @@ abstract class AbstractAnalysisTestCase extends TestCase
         foreach (static::candidates() as $candidate) {
             $path = static::rootPath($candidate);
 
-            if (File::exists($path)) {
+            if (is_dir($path)) {
                 $paths[] = $path;
             }
         }
@@ -35,11 +34,7 @@ abstract class AbstractAnalysisTestCase extends TestCase
 
     private static function candidates(): array
     {
-        return [
-            'config',
-            'src',
-            'tests',
-        ];
+        return ['config', 'src', 'tests'];
     }
 
     private static function rootPath(string $directory): string
