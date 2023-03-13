@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PreemStudio\Jetpack\Tests\Concerns;
+namespace PreemStudio\Jetpack\TestBench\Concerns;
 
 use Mockery;
 

@@ -44,7 +44,7 @@
             "PreemStudio\\Jetpack\\": "src"
         },
         "files": [
-            "src/Tests/helpers.php"
+            "src/TestBench/helpers.php"
         ]
     },
     "autoload-dev": {

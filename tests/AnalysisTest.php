@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use Orchestra\Database\MigrationServiceProvider;
-use PreemStudio\Jetpack\Tests\AbstractAnalysisTestCase;
+use PreemStudio\Jetpack\TestBench\AbstractAnalysisTestCase;
 use Tests\Fixtures\BarStub;
 
 final class AnalysisTest extends AbstractAnalysisTestCase

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use PreemStudio\Jetpack\Tests\AbstractPackageTestCase;
+use PreemStudio\Jetpack\TestBench\AbstractPackageTestCase;
 use Spatie\LaravelData\LaravelDataServiceProvider;
 use Tests\Fixtures\ServiceProviderStub;
 

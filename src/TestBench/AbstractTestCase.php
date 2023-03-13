@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PreemStudio\Jetpack\Tests;
+namespace PreemStudio\Jetpack\TestBench;
 
 use Orchestra\Testbench\TestCase;
 
