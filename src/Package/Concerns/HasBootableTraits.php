@@ -6,7 +6,7 @@ namespace PreemStudio\Jetpack\Package\Concerns;
 
 trait HasBootableTraits
 {
-    private $traitInitializers = [];
+    private array $traitInitializers = [];
 
     private function bootTraits(): void
     {
