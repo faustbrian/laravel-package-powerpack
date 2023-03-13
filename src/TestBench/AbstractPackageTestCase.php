@@ -29,21 +29,18 @@ abstract class AbstractPackageTestCase extends AbstractTestCase
         $provider = static::getServiceProviderClass($app);
 
         if ($provider) {
-            return array_merge(static::getRequiredServiceProviders(), [$provider]);
+            return array_merge($this->getRequiredServiceProviders(), [$provider]);
         }
 
-        return static::getRequiredServiceProviders($app);
+        return $this->getRequiredServiceProviders($app);
     }
 
-    protected static function getRequiredServiceProviders(): array
+    protected function getRequiredServiceProviders(): array
     {
-        return [];
+        return [
+            \Spatie\LaravelData\LaravelDataServiceProvider::class,
+        ];
     }
 
-    protected static function getServiceProviderClass(): string
-    {
-        // this may be overwritten, and must be overwritten
-        // if used with the service provider test case trait
-        return '';
-    }
+    abstract protected function getServiceProviderClass(): string;
 }

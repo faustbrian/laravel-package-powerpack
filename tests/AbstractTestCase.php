@@ -10,12 +10,12 @@ use Tests\Fixtures\ServiceProviderStub;
 
 abstract class AbstractTestCase extends AbstractPackageTestCase
 {
-    protected static function getServiceProviderClass(): string
+    protected function getServiceProviderClass(): string
     {
         return ServiceProviderStub::class;
     }
 
-    protected static function getRequiredServiceProviders(): array
+    protected function getRequiredServiceProviders(): array
     {
         return [LaravelDataServiceProvider::class];
     }
