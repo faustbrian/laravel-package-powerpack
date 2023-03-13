@@ -17,12 +17,17 @@ trait HasConsoleExtensions
     /** @var Extension[] */
     private array $consoleExtensions = [];
 
+    public function bootHasConsoleExtensions(): void
+    {
+        $this->consoleExtensions = $this->defaultConsoleExtensions();
+    }
+
     public function addConsoleExtension(Extension $extension): void
     {
         $this->consoleExtensions[] = $extension;
     }
 
-    protected function consoleExtensions(): array
+    protected function defaultConsoleExtensions(): array
     {
         return [
             new ConfigPublisherExtension,

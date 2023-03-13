@@ -6,6 +6,7 @@ namespace PreemStudio\Jetpack\Package;
 
 use Illuminate\Support\ServiceProvider;
 use PreemStudio\Jetpack\Package\Concerns\HasAutomaticConfiguration;
+use PreemStudio\Jetpack\Package\Concerns\HasBootableTraits;
 use PreemStudio\Jetpack\Package\Concerns\HasComposerJson;
 use PreemStudio\Jetpack\Package\Concerns\HasConsoleExtensions;
 use PreemStudio\Jetpack\Package\Concerns\HasHooks;
@@ -17,6 +18,7 @@ use RuntimeException;
 abstract class AbstractServiceProvider extends ServiceProvider
 {
     use HasAutomaticConfiguration;
+    use HasBootableTraits;
     use HasComposerJson;
     use HasConsoleExtensions;
     use HasHooks;
@@ -24,6 +26,13 @@ abstract class AbstractServiceProvider extends ServiceProvider
     use HasRuntimeExtensions;
 
     protected Package $package;
+
+    public function __construct($app)
+    {
+        parent::__construct($app);
+
+        $this->bootTraits();
+    }
 
     public function register(): void
     {

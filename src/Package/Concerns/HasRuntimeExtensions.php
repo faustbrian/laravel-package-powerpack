@@ -19,12 +19,17 @@ trait HasRuntimeExtensions
     /** @var Extension[] */
     private array $runtimeExtensions = [];
 
+    public function bootHasRuntimeExtensions(): void
+    {
+        $this->runtimeExtensions = $this->defaultRuntimeExtensions();
+    }
+
     public function addRuntimeExtension(Extension $extension): void
     {
         $this->runtimeExtensions[] = $extension;
     }
 
-    protected function runtimeExtensions(): array
+    protected function defaultRuntimeExtensions(): array
     {
         return [
             new TranslationLoaderExtension,
