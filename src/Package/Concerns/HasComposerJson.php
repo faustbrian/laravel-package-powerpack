@@ -7,6 +7,7 @@ namespace PreemStudio\Jetpack\Package\Concerns;
 use PreemStudio\ComposerParser\Package as Composer;
 use PreemStudio\ComposerParser\PackageFactory;
 use PreemStudio\Jetpack\Package\Package;
+use RuntimeException;
 
 trait HasComposerJson
 {
@@ -22,6 +23,12 @@ trait HasComposerJson
 
     protected function getPackageNamespace(Package $package): string
     {
-        return array_key_first($this->getPackageManifest($package)->autoload->psr_4);
+        $namespace = $this->getPackageManifest($package)->autoload?->psr_4;
+
+        if (is_array($namespace)) {
+            return (string) array_key_first($namespace);
+        }
+
+        throw new RuntimeException('This package does not have a namespace.');
     }
 }

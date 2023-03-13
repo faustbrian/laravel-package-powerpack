@@ -65,8 +65,12 @@ abstract class AbstractServiceProvider extends ServiceProvider
 
     protected function getPackageBaseDirectory(): string
     {
-        $reflector = new ReflectionClass(get_class($this));
+        $fileName = (new ReflectionClass(get_class($this)))->getFileName();
 
-        return dirname($reflector->getFileName());
+        if (is_string($fileName)) {
+            return dirname($fileName);
+        }
+
+        throw new RuntimeException('Could not determine the base directory of the package');
     }
 }

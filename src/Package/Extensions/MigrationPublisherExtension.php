@@ -24,7 +24,8 @@ final class MigrationPublisherExtension implements Extension
                 $filePath => $this->generateMigrationName(
                     $migrationFileName,
                     $now->addSecond()
-                ), ], "{$package->shortName()}-migrations");
+                ),
+            ], "{$package->shortName()}-migrations");
 
             if ($package->runsMigrations) {
                 $serviceProvider->forwardLoadMigrationsFrom($filePath);
@@ -36,16 +37,18 @@ final class MigrationPublisherExtension implements Extension
     {
         $migrationsPath = 'migrations/';
 
-        $len = strlen($migrationFileName) + 4;
+        $length = strlen($migrationFileName) + 4;
 
         if (Str::contains($migrationFileName, '/')) {
-            $migrationsPath .= Str::of($migrationFileName)->beforeLast('/')->finish('/');
-            $migrationFileName = Str::of($migrationFileName)->afterLast('/');
+            $migrationsPath .= Str::of($migrationFileName)->beforeLast('/')->finish('/')->toString();
+            $migrationFileName = Str::of($migrationFileName)->afterLast('/')->toString();
         }
 
-        foreach (glob(database_path("{$migrationsPath}*.php")) as $filename) {
-            if ((substr($filename, -$len) === $migrationFileName.'.php')) {
-                return $filename;
+        $fileNames = glob(database_path("{$migrationsPath}*.php")) ?: [];
+
+        foreach ($fileNames as $fileName) {
+            if ((substr($fileName, -$length) === $migrationFileName.'.php')) {
+                return $fileName;
             }
         }
 

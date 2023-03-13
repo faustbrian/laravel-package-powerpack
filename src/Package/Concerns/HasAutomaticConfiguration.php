@@ -126,7 +126,7 @@ trait HasAutomaticConfiguration
         $directory = $package->basePath("/../$directory");
 
         if (File::missing($directory)) {
-            return false;
+            return [];
         }
 
         return collect(File::files($directory))

@@ -8,6 +8,7 @@ use Closure;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use PreemStudio\Jetpack\Package\Package;
+use RuntimeException;
 
 final class InstallCommand extends Command
 {
@@ -109,14 +110,14 @@ final class InstallCommand extends Command
         return $this;
     }
 
-    public function startWith(callable $callable): static
+    public function startWith(Closure $callable): static
     {
         $this->startWith = $callable;
 
         return $this;
     }
 
-    public function endWith(callable $callable): static
+    public function endWith(Closure $callable): static
     {
         $this->endWith = $callable;
 
@@ -137,6 +138,10 @@ final class InstallCommand extends Command
 
         $appConfig = file_get_contents(config_path('app.php'));
 
+        if (! is_string($appConfig)) {
+            throw new RuntimeException('Could not read app config file.');
+        }
+
         $class = '\\Providers\\'.$providerName.'::class';
 
         if (Str::contains($appConfig, $namespace.$class)) {
@@ -149,10 +154,16 @@ final class InstallCommand extends Command
             $appConfig
         ));
 
+        $serviceProviderTemplate = file_get_contents(app_path('Providers/'.$providerName.'.php'));
+
+        if (empty($serviceProviderTemplate)) {
+            throw new RuntimeException('Could not read service provider template.');
+        }
+
         file_put_contents(app_path('Providers/'.$providerName.'.php'), str_replace(
             "namespace App\Providers;",
             "namespace {$namespace}\Providers;",
-            file_get_contents(app_path('Providers/'.$providerName.'.php'))
+            $serviceProviderTemplate
         ));
 
         return $this;
