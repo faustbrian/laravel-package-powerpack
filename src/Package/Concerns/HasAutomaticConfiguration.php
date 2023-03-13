@@ -93,7 +93,7 @@ trait HasAutomaticConfiguration
 
     protected function getRoutes(Package $package): array
     {
-        return $this->getFilesFromDirectory($package, 'routes');
+        return $this->getFilesFromDirectory($package, 'routes', true);
     }
 
     protected function hasCommands(Package $package): bool
@@ -121,7 +121,7 @@ trait HasAutomaticConfiguration
         return count(File::files($directory)) > 0;
     }
 
-    protected function getFilesFromDirectory(Package $package, string $directory): array
+    protected function getFilesFromDirectory(Package $package, string $directory, bool $shouldReturnPathname = false): array
     {
         $directory = $package->basePath("/../$directory");
 
@@ -130,7 +130,7 @@ trait HasAutomaticConfiguration
         }
 
         return collect(File::files($directory))
-            ->map(fn (SplFileInfo $file) => $file->getFilenameWithoutExtension())
+            ->map(fn (SplFileInfo $file) => $shouldReturnPathname ? $file->getPathname() : $file->getFilenameWithoutExtension())
             ->toArray();
     }
 }
