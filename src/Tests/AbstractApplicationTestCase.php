@@ -11,7 +11,7 @@ use RuntimeException;
 
 abstract class AbstractApplicationTestCase extends AbstractTestCase
 {
-    protected static function getBasePath(): string
+    protected function getBasePath(): string
     {
         $class = new ReflectionClass($this);
 
