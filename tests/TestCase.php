@@ -8,7 +8,7 @@ use PreemStudio\Jetpack\TestBench\AbstractPackageTestCase;
 use Spatie\LaravelData\LaravelDataServiceProvider;
 use Tests\Fixtures\ServiceProviderStub;
 
-abstract class AbstractTestCase extends AbstractPackageTestCase
+abstract class TestCase extends AbstractPackageTestCase
 {
     protected function getServiceProviderClass(): string
     {

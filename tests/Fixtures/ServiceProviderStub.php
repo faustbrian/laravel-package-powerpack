@@ -12,7 +12,7 @@ final class ServiceProviderStub extends AbstractServiceProvider
 
     public function packageRegistered(): void
     {
-        $this->app->singleton('testbench.foostub', function ($app): FooStub {
+        $this->app->singleton('testbench.foostub', function (): FooStub {
             return new FooStub('baz');
         });
 
