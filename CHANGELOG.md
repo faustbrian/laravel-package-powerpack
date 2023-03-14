@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.2.9] - 2023-03-14
+### Changed
+- parse `composer.json` via `json_decode`
+
+
 ## [1.2.8] - 2023-03-13
 ### Changed
 - mark `getServiceProviderClass` as `abstract`
@@ -78,7 +83,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-03-09
 
-[Unreleased]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.8...HEAD
+[Unreleased]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.9...HEAD
+[1.2.9]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.8...1.2.9
 [1.2.8]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.7...1.2.8
 [1.2.7]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.6...1.2.7
 [1.2.6]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.5...1.2.6
