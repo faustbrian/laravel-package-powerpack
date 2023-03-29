@@ -17,7 +17,6 @@
     "homepage": "https://github.com/preemstudio/laravel-jetpack",
     "require": {
         "php": "^8.1",
-        "dms/phpunit-arraysubset-asserts": "^0.4.0",
         "graham-campbell/analyzer": "^4.0",
         "illuminate/contracts": "^10.0",
         "nesbot/carbon": "^2.66",
