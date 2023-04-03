@@ -3,7 +3,7 @@
     "description": "A package to supercharge your packages with Laravel.",
     "license": "MIT",
     "keywords": [
-        "PreemStudio",
+        "Preem Studio",
         "laravel",
         "laravel-jetpack"
     ],
@@ -14,9 +14,9 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/preemstudio/laravel-jetpack",
+    "homepage": "https://github.com/PreemStudio/laravel-jetpack",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "graham-campbell/analyzer": "^4.0",
         "illuminate/contracts": "^10.0",
         "nesbot/carbon": "^2.66",
@@ -24,7 +24,6 @@
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.30",
-        "laravel/pint": "^1.6",
         "mockery/mockery": "^1.5",
         "nunomaduro/collision": "^6.4",
         "nunomaduro/larastan": "^2.5",
@@ -34,6 +33,7 @@
         "phpstan/extension-installer": "^1.2",
         "phpstan/phpstan-deprecation-rules": "^1.1",
         "phpstan/phpstan-phpunit": "^1.3",
+        "preemstudio/php-cs-fixer-config": "^1.3",
         "spatie/laravel-ray": "^1.32"
     },
     "minimum-stability": "dev",
