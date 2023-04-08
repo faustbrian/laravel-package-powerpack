@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace PreemStudio\Jetpack\Package\Concerns;
 
-use PreemStudio\Jetpack\Package\Package;
 use RuntimeException;
+use Spatie\LaravelPackageTools\Package;
 
 trait HasComposerJson
 {
     protected function getPackageManifest(Package $package): array
     {
-        $composerJsonPath = \realpath($package->rootPath('composer.json'));
+        $composerJsonPath = \realpath($package->basePath('/../composer.json'));
 
         if ($composerJsonPath === false) {
             throw new RuntimeException('This package does not have a composer.json file.');

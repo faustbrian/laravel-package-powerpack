@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace PreemStudio\Jetpack\Package\Concerns;
 
 use Illuminate\Support\Facades\File;
-use PreemStudio\Jetpack\Package\Commands\InstallCommand;
-use PreemStudio\Jetpack\Package\Package;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Spatie\LaravelPackageTools\Package;
 use Symfony\Component\Finder\SplFileInfo;
 
 trait HasAutomaticConfiguration
@@ -112,7 +112,7 @@ trait HasAutomaticConfiguration
 
     protected function hasFilesInDirectory(Package $package, string $directory): bool
     {
-        $directory = $package->rootPath($directory);
+        $directory = $package->basePath("/../{$directory}");
 
         if (File::missing($directory)) {
             return false;
@@ -123,7 +123,7 @@ trait HasAutomaticConfiguration
 
     protected function getFilesFromDirectory(Package $package, string $directory): array
     {
-        $directory = $package->rootPath($directory);
+        $directory = $package->basePath("/../{$directory}");
 
         if (File::missing($directory)) {
             return [];

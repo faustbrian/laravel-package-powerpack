@@ -19,7 +19,8 @@
         "php": "^8.2",
         "graham-campbell/analyzer": "^4.0",
         "illuminate/contracts": "^10.0",
-        "nesbot/carbon": "^2.66"
+        "nesbot/carbon": "^2.66",
+        "spatie/laravel-package-tools": "^1.14"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.30",
