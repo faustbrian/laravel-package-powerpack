@@ -12,7 +12,7 @@ trait HasTranslationPath
     {
         $langPath = 'vendor/'.$package->shortName();
 
-        if (function_exists('lang_path')) {
+        if (\function_exists('lang_path')) {
             return lang_path($langPath);
         }
 

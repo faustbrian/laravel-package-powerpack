@@ -43,7 +43,7 @@ trait HasAutomaticConfiguration
             $package->hasCommands($this->getCommands($package));
         }
 
-        $package->hasInstallCommand(function (InstallCommand $command) use ($package) {
+        $package->hasInstallCommand(function (InstallCommand $command) use ($package): void {
             if ($this->hasConfigFile($package)) {
                 $command->publishConfigFile();
             }
@@ -118,7 +118,7 @@ trait HasAutomaticConfiguration
             return false;
         }
 
-        return count(File::files($directory)) > 0;
+        return \count(File::files($directory)) > 0;
     }
 
     protected function getFilesFromDirectory(Package $package, string $directory): array

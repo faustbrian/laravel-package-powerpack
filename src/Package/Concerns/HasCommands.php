@@ -17,7 +17,7 @@ trait HasCommands
 
     public function hasCommands(array $commandClassNames): static
     {
-        $this->commands = array_merge($this->commands, collect($commandClassNames)->flatten()->toArray());
+        $this->commands = \array_merge($this->commands, collect($commandClassNames)->flatten()->toArray());
 
         return $this;
     }

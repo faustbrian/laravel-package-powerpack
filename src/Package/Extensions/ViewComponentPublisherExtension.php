@@ -12,7 +12,7 @@ final class ViewComponentPublisherExtension implements Extension
 {
     public function execute(AbstractServiceProvider $serviceProvider, Package $package): void
     {
-        if (count($package->viewComponents)) {
+        if (\count($package->viewComponents)) {
             $serviceProvider->forwardPublishes([
                 $package->basePath('/Components') => base_path("app/View/Components/vendor/{$package->shortName()}"),
             ], "{$package->name}-components");

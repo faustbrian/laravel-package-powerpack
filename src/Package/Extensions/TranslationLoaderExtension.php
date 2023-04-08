@@ -16,7 +16,7 @@ final class TranslationLoaderExtension implements Extension
     {
         $serviceProvider->forwardLoadTranslationsFrom(
             $package->rootPath('resources/lang/'),
-            $package->shortName()
+            $package->shortName(),
         );
 
         $serviceProvider->forwardLoadJsonTranslationsFrom($package->rootPath('resources/lang/'));

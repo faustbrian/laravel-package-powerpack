@@ -12,7 +12,7 @@ final class CommandLoaderExtension implements Extension
 {
     public function execute(AbstractServiceProvider $serviceProvider, Package $package): void
     {
-        if (! empty($package->commands)) {
+        if (!empty($package->commands)) {
             $serviceProvider->forwardCommands($package->commands);
         }
     }

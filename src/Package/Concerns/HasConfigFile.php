@@ -12,9 +12,9 @@ trait HasConfigFile
 
     public function hasConfigFile(array|string $configFileName = null): static
     {
-        $configFileName = $configFileName ?? $this->shortName();
+        $configFileName ??= $this->shortName();
 
-        if (! is_array($configFileName)) {
+        if (!\is_array($configFileName)) {
             $configFileName = [$configFileName];
         }
 

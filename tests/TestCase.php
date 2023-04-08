@@ -7,6 +7,9 @@ namespace Tests;
 use PreemStudio\Jetpack\TestBench\AbstractPackageTestCase;
 use Tests\Fixtures\ServiceProviderStub;
 
+/**
+ * @internal
+ */
 abstract class TestCase extends AbstractPackageTestCase
 {
     protected function getServiceProviderClass(): string

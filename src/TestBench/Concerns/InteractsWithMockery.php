@@ -13,7 +13,7 @@ trait InteractsWithMockery
      */
     public function tearDownMockery(): void
     {
-        if (class_exists(Mockery::class, false)) {
+        if (\class_exists(Mockery::class, false)) {
             $this->addToAssertionCount(Mockery::getContainer()->mockery_getExpectationCount());
 
             Mockery::close();

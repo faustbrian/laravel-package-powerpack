@@ -17,7 +17,7 @@ trait HasRoutes
 
     public function hasRoutes(array $routeFileNames): static
     {
-        $this->routeFileNames = array_merge($this->routeFileNames, collect($routeFileNames)->flatten()->toArray());
+        $this->routeFileNames = \array_merge($this->routeFileNames, collect($routeFileNames)->flatten()->toArray());
 
         return $this;
     }

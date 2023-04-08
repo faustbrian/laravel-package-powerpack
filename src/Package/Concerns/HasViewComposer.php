@@ -10,7 +10,7 @@ trait HasViewComposer
 
     public function hasViewComposer(array|string $view, object $viewComposer): static
     {
-        if (! is_array($view)) {
+        if (!\is_array($view)) {
             $view = [$view];
         }
 

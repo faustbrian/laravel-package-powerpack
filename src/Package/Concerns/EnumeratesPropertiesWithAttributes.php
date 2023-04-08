@@ -13,8 +13,9 @@ trait EnumeratesPropertiesWithAttributes
         $reflection = new ReflectionClass(static::class);
 
         $result = [];
+
         foreach ($reflection->getProperties() as $property) {
-            if (count($property->getAttributes()) > 0) {
+            if (\count($property->getAttributes()) > 0) {
                 $result[$property->getName()] = $property->getAttributes();
             }
         }

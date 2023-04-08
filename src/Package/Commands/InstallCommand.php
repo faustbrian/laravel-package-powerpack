@@ -12,9 +12,13 @@ use RuntimeException;
 
 final class InstallCommand extends Command
 {
-    protected Package $package;
-
     public ?Closure $startWith = null;
+
+    public ?Closure $endWith = null;
+
+    public $hidden = true;
+
+    protected Package $package;
 
     protected bool $shouldPublishConfigFile = false;
 
@@ -23,10 +27,6 @@ final class InstallCommand extends Command
     protected bool $askToRunMigrations = false;
 
     protected bool $copyServiceProviderInApp = false;
-
-    public ?Closure $endWith = null;
-
-    public $hidden = true;
 
     public function __construct(Package $package)
     {
@@ -128,7 +128,7 @@ final class InstallCommand extends Command
     {
         $providerName = $this->package->publishableProviderName;
 
-        if (! $providerName) {
+        if (!$providerName) {
             return $this;
         }
 
@@ -136,9 +136,9 @@ final class InstallCommand extends Command
 
         $namespace = Str::replaceLast('\\', '', $this->laravel->getNamespace());
 
-        $appConfig = file_get_contents(config_path('app.php'));
+        $appConfig = \file_get_contents(config_path('app.php'));
 
-        if (! is_string($appConfig)) {
+        if (!\is_string($appConfig)) {
             throw new RuntimeException('Could not read app config file.');
         }
 
@@ -148,22 +148,22 @@ final class InstallCommand extends Command
             return $this;
         }
 
-        file_put_contents(config_path('app.php'), str_replace(
-            "Illuminate\\View\ViewServiceProvider::class,",
-            "Illuminate\\View\ViewServiceProvider::class,".PHP_EOL."        {$namespace}\Providers\\".$providerName.'::class,',
-            $appConfig
+        \file_put_contents(config_path('app.php'), \str_replace(
+            'Illuminate\\View\\ViewServiceProvider::class,',
+            'Illuminate\\View\\ViewServiceProvider::class,'.\PHP_EOL."        {$namespace}\\Providers\\".$providerName.'::class,',
+            $appConfig,
         ));
 
-        $serviceProviderTemplate = file_get_contents(app_path('Providers/'.$providerName.'.php'));
+        $serviceProviderTemplate = \file_get_contents(app_path('Providers/'.$providerName.'.php'));
 
         if (empty($serviceProviderTemplate)) {
             throw new RuntimeException('Could not read service provider template.');
         }
 
-        file_put_contents(app_path('Providers/'.$providerName.'.php'), str_replace(
-            "namespace App\Providers;",
-            "namespace {$namespace}\Providers;",
-            $serviceProviderTemplate
+        \file_put_contents(app_path('Providers/'.$providerName.'.php'), \str_replace(
+            'namespace App\\Providers;',
+            "namespace {$namespace}\\Providers;",
+            $serviceProviderTemplate,
         ));
 
         return $this;

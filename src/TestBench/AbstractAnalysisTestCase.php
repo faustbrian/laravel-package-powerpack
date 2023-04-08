@@ -8,6 +8,9 @@ use GrahamCampbell\Analyzer\AnalysisTrait;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
+/**
+ * @internal
+ */
 abstract class AbstractAnalysisTestCase extends TestCase
 {
     use AnalysisTrait;
@@ -19,7 +22,7 @@ abstract class AbstractAnalysisTestCase extends TestCase
         foreach (static::candidates() as $candidate) {
             $path = static::rootPath($candidate);
 
-            if (is_dir($path)) {
+            if (\is_dir($path)) {
                 $paths[] = $path;
             }
         }
@@ -39,9 +42,9 @@ abstract class AbstractAnalysisTestCase extends TestCase
 
     private static function rootPath(string $directory): string
     {
-        $basePath = dirname((new ReflectionClass(static::class))->getFileName());
-        $basePath = realpath("$basePath/../../");
+        $basePath = \dirname((new ReflectionClass(static::class))->getFileName());
+        $basePath = \realpath("{$basePath}/../../");
 
-        return $basePath.DIRECTORY_SEPARATOR.ltrim($directory, DIRECTORY_SEPARATOR);
+        return $basePath.\DIRECTORY_SEPARATOR.\ltrim($directory, \DIRECTORY_SEPARATOR);
     }
 }

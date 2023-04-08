@@ -14,7 +14,9 @@ use PreemStudio\Jetpack\Package\Extensions\ViewPublisherExtension;
 
 trait HasConsoleExtensions
 {
-    /** @var Extension[] */
+    /**
+     * @var Extension[]
+     */
     private array $consoleExtensions = [];
 
     public function bootHasConsoleExtensions(): void
@@ -30,13 +32,13 @@ trait HasConsoleExtensions
     protected function defaultConsoleExtensions(): array
     {
         return [
-            new ConfigPublisherExtension,
-            new ViewPublisherExtension,
-            new MigrationPublisherExtension,
-            new MigrationLoaderExtension,
-            new migrationloaderExtension,
-            new TranslationPublisherExtension,
-            new AssetPublisherExtension,
+            new ConfigPublisherExtension(),
+            new ViewPublisherExtension(),
+            new MigrationPublisherExtension(),
+            new MigrationLoaderExtension(),
+            new migrationloaderExtension(),
+            new TranslationPublisherExtension(),
+            new AssetPublisherExtension(),
         ];
     }
 }

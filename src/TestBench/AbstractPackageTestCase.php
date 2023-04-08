@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace PreemStudio\Jetpack\TestBench;
 
+/**
+ * @internal
+ */
 abstract class AbstractPackageTestCase extends AbstractTestCase
 {
     protected function getEnvironmentSetUp($app): void
@@ -14,9 +17,9 @@ abstract class AbstractPackageTestCase extends AbstractTestCase
 
         $app->config->set('database.default', 'sqlite');
         $app->config->set('database.connections.sqlite', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
 
         $app->config->set('mail.driver', 'log');
@@ -29,7 +32,7 @@ abstract class AbstractPackageTestCase extends AbstractTestCase
         $provider = static::getServiceProviderClass($app);
 
         if ($provider) {
-            return array_merge($this->getRequiredServiceProviders(), [$provider]);
+            return \array_merge($this->getRequiredServiceProviders(), [$provider]);
         }
 
         return $this->getRequiredServiceProviders($app);

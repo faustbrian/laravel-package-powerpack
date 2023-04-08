@@ -17,13 +17,14 @@ final class MigrationPublisherExtension implements Extension
     public function execute(AbstractServiceProvider $serviceProvider, Package $package): void
     {
         $now = Carbon::now();
+
         foreach ($package->migrationFileNames as $migrationFileName) {
             $filePath = $this->getMigrationFilePath($package, $migrationFileName);
 
             $serviceProvider->forwardPublishes([
                 $filePath => $this->generateMigrationName(
                     $migrationFileName,
-                    $now->addSecond()
+                    $now->addSecond(),
                 ),
             ], "{$package->shortName()}-migrations");
 
@@ -37,17 +38,17 @@ final class MigrationPublisherExtension implements Extension
     {
         $migrationsPath = 'migrations/';
 
-        $length = strlen($migrationFileName) + 4;
+        $length = \mb_strlen($migrationFileName) + 4;
 
         if (Str::contains($migrationFileName, '/')) {
             $migrationsPath .= Str::of($migrationFileName)->beforeLast('/')->finish('/')->toString();
             $migrationFileName = Str::of($migrationFileName)->afterLast('/')->toString();
         }
 
-        $fileNames = glob(database_path("{$migrationsPath}*.php")) ?: [];
+        $fileNames = \glob(database_path("{$migrationsPath}*.php")) ?: [];
 
         foreach ($fileNames as $fileName) {
-            if ((substr($fileName, -$length) === $migrationFileName.'.php')) {
+            if (\mb_substr($fileName, -$length) === $migrationFileName.'.php') {
                 return $fileName;
             }
         }

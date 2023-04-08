@@ -26,9 +26,9 @@ trait HasMigrations
 
     public function hasMigrations(array $migrationFileNames): static
     {
-        $this->migrationFileNames = array_merge(
+        $this->migrationFileNames = \array_merge(
             $this->migrationFileNames,
-            collect($migrationFileNames)->flatten()->toArray()
+            collect($migrationFileNames)->flatten()->toArray(),
         );
 
         return $this;

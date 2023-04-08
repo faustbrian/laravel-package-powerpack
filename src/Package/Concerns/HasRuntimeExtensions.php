@@ -16,7 +16,9 @@ use PreemStudio\Jetpack\Package\Extensions\ViewSharePublisherExtension;
 
 trait HasRuntimeExtensions
 {
-    /** @var Extension[] */
+    /**
+     * @var Extension[]
+     */
     private array $runtimeExtensions = [];
 
     public function bootHasRuntimeExtensions(): void
@@ -32,14 +34,14 @@ trait HasRuntimeExtensions
     protected function defaultRuntimeExtensions(): array
     {
         return [
-            new TranslationLoaderExtension,
-            new ViewLoaderExtension,
-            new ViewComponentLoaderExtension,
-            new ViewComponentPublisherExtension,
-            new ServiceProviderPublisherExtension,
-            new RouteLoaderExtension,
-            new ViewSharePublisherExtension,
-            new ViewComposerPublisherExtension,
+            new TranslationLoaderExtension(),
+            new ViewLoaderExtension(),
+            new ViewComponentLoaderExtension(),
+            new ViewComponentPublisherExtension(),
+            new ServiceProviderPublisherExtension(),
+            new RouteLoaderExtension(),
+            new ViewSharePublisherExtension(),
+            new ViewComposerPublisherExtension(),
         ];
     }
 }

@@ -38,7 +38,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
     {
         $this->registeringPackage();
 
-        $this->package = new Package;
+        $this->package = new Package();
 
         $this->package->setBasePath($this->getPackageBaseDirectory());
 
@@ -74,10 +74,10 @@ abstract class AbstractServiceProvider extends ServiceProvider
 
     protected function getPackageBaseDirectory(): string
     {
-        $fileName = (new ReflectionClass(get_class($this)))->getFileName();
+        $fileName = (new ReflectionClass(\get_class($this)))->getFileName();
 
-        if (is_string($fileName)) {
-            return dirname($fileName);
+        if (\is_string($fileName)) {
+            return \dirname($fileName);
         }
 
         throw new RuntimeException('Could not determine the base directory of the package');

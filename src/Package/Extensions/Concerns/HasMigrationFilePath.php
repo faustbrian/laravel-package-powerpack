@@ -12,7 +12,7 @@ trait HasMigrationFilePath
     {
         $filePath = $package->rootPath("database/migrations/{$migrationFileName}.php");
 
-        if (! file_exists($filePath)) {
+        if (!\file_exists($filePath)) {
             $filePath .= '.stub';
         }
 

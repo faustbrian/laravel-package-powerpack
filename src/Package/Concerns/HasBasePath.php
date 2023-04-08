@@ -8,18 +8,18 @@ trait HasBasePath
 {
     public string $basePath;
 
-    public function rootPath(string $directory = null): string
+    public function rootPath(?string $directory = null): string
     {
         return $this->basePath("/../{$directory}");
     }
 
-    public function basePath(string $directory = null): string
+    public function basePath(?string $directory = null): string
     {
         if ($directory === null) {
             return $this->basePath;
         }
 
-        return $this->basePath.DIRECTORY_SEPARATOR.ltrim($directory, DIRECTORY_SEPARATOR);
+        return $this->basePath.\DIRECTORY_SEPARATOR.\ltrim($directory, \DIRECTORY_SEPARATOR);
     }
 
     public function setBasePath(string $path): static
