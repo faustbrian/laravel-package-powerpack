@@ -11,7 +11,25 @@ trait HasComposerJson
 {
     protected function getPackageManifest(Package $package): array
     {
-        return json_decode(file_get_contents(realpath($package->rootPath('composer.json'))), true, 512, JSON_THROW_ON_ERROR);
+        $composerJsonPath = realpath($package->rootPath('composer.json'));
+
+        if ($composerJsonPath === false) {
+            throw new RuntimeException('This package does not have a composer.json file.');
+        }
+
+        $contents = file_get_contents($composerJsonPath);
+
+        if ($contents === false) {
+            throw new RuntimeException('Unable to read composer.json file.');
+        }
+
+        $decoded = json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
+
+        if (! is_array($decoded)) {
+            throw new RuntimeException('Unable to decode composer.json file.');
+        }
+
+        return $decoded;
     }
 
     protected function getPackageName(Package $package): string
