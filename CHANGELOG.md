@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.3.0] - 2023-04-08
+
 ## [1.2.11] - 2023-03-29
 
 ## [1.2.10] - 2023-03-17
@@ -90,7 +92,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-03-09
 
-[Unreleased]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.11...HEAD
+[Unreleased]: https://github.com/PreemStudio/laravel-jetpack/compare/1.3.0...HEAD
+[1.3.0]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.11...1.3.0
 [1.2.11]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.10...1.2.11
 [1.2.10]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.9...1.2.10
 [1.2.9]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.8...1.2.9
