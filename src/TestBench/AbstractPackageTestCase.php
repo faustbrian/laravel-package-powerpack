@@ -37,9 +37,7 @@ abstract class AbstractPackageTestCase extends AbstractTestCase
 
     protected function getRequiredServiceProviders(): array
     {
-        return [
-            \Spatie\LaravelData\LaravelDataServiceProvider::class,
-        ];
+        return [];
     }
 
     abstract protected function getServiceProviderClass(): string;
