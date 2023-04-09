@@ -106,7 +106,7 @@ trait HasAutomaticConfiguration
         $namespace = $this->getPackageNamespace($package);
 
         return collect($this->getFilesFromDirectory($package, 'src/Commands'))
-            ->map(fn (string $className) => $namespace.$className)
+            ->map(fn (string $className) => "{$namespace}Commands\\{$className}")
             ->toArray();
     }
 
