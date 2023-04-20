@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [2.0.2] - 2023-04-20
+### Fixed
+- use `allFiles` to list all files
+
+### Pull Requests
+- Merge pull request [#1](https://github.com/PreemStudio/laravel-jetpack/issues/1) from PreemStudio/dependabot/github_actions/dependabot/fetch-metadata-1.4.0
+
+
 ## [2.0.1] - 2023-04-09
 ### Fixed
 - commands namespace
@@ -102,7 +110,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-03-09
 
-[Unreleased]: https://github.com/PreemStudio/laravel-jetpack/compare/2.0.1...HEAD
+[Unreleased]: https://github.com/PreemStudio/laravel-jetpack/compare/2.0.2...HEAD
+[2.0.2]: https://github.com/PreemStudio/laravel-jetpack/compare/2.0.1...2.0.2
 [2.0.1]: https://github.com/PreemStudio/laravel-jetpack/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/PreemStudio/laravel-jetpack/compare/1.3.0...2.0.0
 [1.3.0]: https://github.com/PreemStudio/laravel-jetpack/compare/1.2.11...1.3.0
