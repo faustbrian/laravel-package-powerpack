@@ -118,7 +118,7 @@ trait HasAutomaticConfiguration
             return false;
         }
 
-        return \count(File::files($directory)) > 0;
+        return \count(File::allFiles($directory)) > 0;
     }
 
     protected function getFilesFromDirectory(Package $package, string $directory): array
