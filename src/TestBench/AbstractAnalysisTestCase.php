@@ -45,6 +45,6 @@ abstract class AbstractAnalysisTestCase extends TestCase
         $basePath = \dirname((new ReflectionClass(static::class))->getFileName());
         $basePath = \realpath("{$basePath}/../../");
 
-        return $basePath . \DIRECTORY_SEPARATOR . \ltrim($directory, \DIRECTORY_SEPARATOR);
+        return $basePath.\DIRECTORY_SEPARATOR.\ltrim($directory, \DIRECTORY_SEPARATOR);
     }
 }
