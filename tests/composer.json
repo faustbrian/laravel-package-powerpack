@@ -1,0 +1,8 @@
+{
+    "name": "bombenprodukt/laravel-package-powerpack",
+    "autoload": {
+        "psr-4": {
+            "BombenProdukt\\PackagePowerPack\\": "src"
+        }
+    }
+}
