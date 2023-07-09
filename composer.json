@@ -14,7 +14,7 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/BombenProdukt/laravel-package-powerpack",
+    "homepage": "https://github.com/faustbrian/laravel-package-powerpack",
     "require": {
         "php": "^8.2",
         "graham-campbell/analyzer": "^4.0",
