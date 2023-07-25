@@ -68,7 +68,10 @@ trait HasAutomaticConfiguration
 
     protected function getMigrations(Package $package): array
     {
-        return $this->getFilesFromDirectory($package, 'database/migrations');
+        return \array_map(
+            fn (string $migration) => \mb_substr($migration, 0, -4),
+            $this->getFilesFromDirectory($package, 'database/migrations'),
+        );
     }
 
     protected function hasViews(Package $package): bool
