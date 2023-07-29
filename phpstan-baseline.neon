@@ -1,6 +1,11 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Variable method call on \\$this\\(BombenProdukt\\\\PackagePowerPack\\\\Package\\\\AbstractServiceProvider\\)\\.$#"
+			count: 1
+			path: src/Package/AbstractServiceProvider.php
+
+		-
 			message: "#^Parameter \\#1 \\$path of function dirname expects string, string\\|false given\\.$#"
 			count: 1
 			path: src/TestBench/AbstractAnalysisTestCase.php
@@ -27,6 +32,11 @@ parameters:
 
 		-
 			message: "#^Method BombenProdukt\\\\PackagePowerPack\\\\TestBench\\\\AbstractPackageTestCase\\:\\:getServiceProviderClass\\(\\) invoked with 1 parameter, 0 required\\.$#"
+			count: 1
+			path: src/TestBench/AbstractPackageTestCase.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, string given\\.$#"
 			count: 1
 			path: src/TestBench/AbstractPackageTestCase.php
 
