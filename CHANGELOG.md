@@ -9,18 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
-<a name="2.0.0"></a>
-## [2.0.0] - 2024-04-20
+<a name="0.0.2"></a>
+## [0.0.2] - 2024-11-05
 
-<a name="1.0.1"></a>
-## [1.0.1] - 2023-07-25
-### Fixed
-- Remove `.php` file extension from migrations to publish files
+<a name="0.0.1"></a>
+## 0.0.1 - 2024-11-04
 
-
-<a name="1.0.0"></a>
-## 1.0.0 - 2023-04-26
-
-[Unreleased]: https://github.com/basecodeoy/laravel-package-powerpack/compare/2.0.0...HEAD
-[2.0.0]: https://github.com/basecodeoy/laravel-package-powerpack/compare/1.0.1...2.0.0
-[1.0.1]: https://github.com/basecodeoy/laravel-package-powerpack/compare/1.0.0...1.0.1
+[Unreleased]: https://github.com/basecodeoy/laravel-package-powerpack/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/basecodeoy/laravel-package-powerpack/compare/0.0.1...0.0.2
