@@ -23,7 +23,7 @@
     "spatie/laravel-package-tools": "^1.14"
   },
   "require-dev": {
-    "basecodeoy/php-cs-fixer-config": "^0.0.1",
+    "basecodeoy/php-cs-fixer-config": "^0.0.2",
     "ergebnis/composer-normalize": "^2.30",
     "friendsofphp/php-cs-fixer": "^3.16",
     "mockery/mockery": "^1.5",
