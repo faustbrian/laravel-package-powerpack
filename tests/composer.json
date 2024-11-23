@@ -1,0 +1,8 @@
+{
+    "name": "basecodeoy/laravel-package-powerpack",
+    "autoload": {
+        "psr-4": {
+            "BaseCodeOy\\PackagePowerPack\\": "src"
+        }
+    }
+}
